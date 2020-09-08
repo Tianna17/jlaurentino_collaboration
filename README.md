@@ -2,4 +2,5 @@
 
 ### Have fun with the code
 
-git clone https://github.com/jlaurentino/jlaurentino_collatoration
+Fork it!
+https://github.com/jlaurentino/jlaurentino_collaboration
