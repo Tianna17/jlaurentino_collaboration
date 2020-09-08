@@ -2,4 +2,4 @@
 
 ### Have fun with the code
 
-git clone https://github.com/jlaurentino/friends
+git clone https://github.com/jlaurentino/jlaurentino_collatoration
