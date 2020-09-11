@@ -1,130 +1,214 @@
 <!DOCTYPE html>
-<html>
-  <title>Monthly Bills</title>
-  <style>
-    body { background-color: rgba(200,255,0,.3); margin: 0 auto; width: 80% }
-    #myHTML {
-      width: 100%;
-      min-height: 12vmin;
-      margin-top: 2vmin;
-      background-color: rgba(200,255,0,.6);
-      line-height:1.4vmin; color: rgba(0,0,0,1);
-      font-family: Arial; font-size: 1.6vmin; font-weight:bold; vertical-align: middle;
-      text-shadow: 0.05vmin 0.05vmin 0.05vmin rgba(0,0,0,.5);
-      border-radius:0.5vmin;
-      -webkit-border-radius:0.5vmin;
-      -moz-border-radius:0.5vmin;
-      border:0.05vmin ridge rgba(255,255,0,1);
-      -webkit-border: 0.05vmin ridge rgba(255,255,0,1);
-      -moz-border: 0.05vmin ridge rgba(255,255,0,1);
-      box-shadow:inset 0.1vmin 0.1vmin 0.1vmin rgba(0,0,0,.5), 0.3vmin 0.3vmin 0.3vmin rgba(0,0,0,1);
-      -webkit-box-shadow:inset 0 0.1vmin 0.1vmin rgba(0,0,0,.5), 0.3vmin 0.3vmin 0.3vmin rgba(0,0,0,1);
-      -moz-box-shadow:inset 0 0.1vmin 0.1vmin rgba(0,0,0,.5), 0.3vmin 0.3vmin 0.3vmin rgba(0,0,0,1);
-    }
-    #welcome{
-      line-height:12vmin;
-      vertical-align: middle;
-      text-align: center;
-      font-size: 8vmin;
-      color: rgba(88, 196, 234,1);
-    }
-    #pwmngr div { margin: 0.1vmin; padding: 0.2vmin; text-align:center; float:left; border: 0.1vmin solid rgba(240,144,6,1); }
-    a:link {
-      text-decoration: none;
-      color: rgba(30,130,76,1);
-    }
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monthly Bills</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
 
-    a:visited {
-      text-decoration: none;
-      color: rgba(30,130,76,1);
-    }
+      body {
+        background: #eee;
+        color: #333;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 26px;
+      }
 
-    a:hover {
-      text-decoration: none;
-      color: rgba(0,0,255,.6);
-    }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
 
-    a:active {
-      text-decoration: none;
-      color: rgba(30,130,76,1);
-    }
-    ._payee { clear:both; width: 60%; }
-    ._dueDate { width: 9%; }
-    ._userName { width: 14%; }
-    ._passWord { width: 14%; }
-  </style>
+      a:hover {
+        text-decoration: underline;
+        color: rgba(30, 130, 76, 1);
+      }
+
+      a:visited {
+        color: red;
+      }
+
+      .container {
+        max-width: 1140px;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      header h1#welcome {
+        padding: 1.5rem;
+        background-color: purple;
+        margin: 2.5rem 0;
+        text-align: center;
+        color: #fff;
+        font-size: 3rem;
+        text-transform: uppercase;
+        box-shadow: inset 0.1vmin 0.1vmin 0.1vmin rgba(0, 0, 0, 0.5),
+          0.3vmin 0.3vmin 0.3vmin rgba(0, 0, 0, 1);
+      }
+
+      .table-row,
+      .table-head {
+        border: 1px solid #333;
+        display: block;
+        overflow: hidden;
+        padding: 10px 0 10px 10px;
+      }
+
+      .table-head {
+        background-color: #333;
+        color: #eee;
+        font-size: 1.2rem;
+      }
+
+      ._payee,
+      ._dueDate,
+      ._userName,
+      ._passWord {
+        float: left;
+      }
+
+      ._payee,
+      ._account {
+        width: 30%;
+      }
+
+      ._dueDate,
+      ._userName {
+        width: 22%;
+        text-align: center;
+      }
+
+      ._passWord {
+        width: 24%;
+        text-align: center;
+      }
+    </style>
+  </head>
+
   <body>
-    <div id='myHTML'>
-      <div id='welcome'>Bills Schedule</div>
-      <div id='pwmngr'>
-        <div style='clear:both; margin:2vmin; width:96%; height: auto; '>
-
-          <div class='_payee' style='text-align:left; '>
-            Account
-          </div>
-          <div class='_dueDate'>Due Date</div>
-          <div class='_userName'>Gustard</div>
-          <div class='_passWord'>Password</div>
-
-         <div class='_payee' style='text-align:left; '>
-           <a href='https://heroku.com' title='Web Hosting' target='_blank'>HEROKU</a>
-         </div>
-         <div class='_dueDate'>1</div>
-         <div class='_userName'>user1name</div>
-         <div class='_passWord'>pass1word</div>
-
-         <div class='_payee' style='text-align:left; '>
-           <a href="https://fpl.com" title="Electric Bill" target="_blank">FPL</a>
-         </div>
-         <div class='_dueDate'>7</div>
-         <div class='_userName'>user2name</div>
-         <div class='_passWord'>pass2word</div>
-
-         <div class='_payee' style='text-align:left; '>
-           <a href="https://www.paypal.com" title="PayPal" target="_blank">PayPal</a>
-         </div>
-         <div class='_dueDate'>9</div>
-         <div class='_userName'>user3name</div>
-         <div class='_passWord'>pass3word</div>
-
-         <div class='_payee' style='text-align:left; '>
-           <a href="https://sprint.com" title="Sprint Cellular" target="_blank">SPRINT Cellular</a>
-         </div>
-         <div class='_dueDate'>11</div>
-         <div class='_userName'>user4name</div>
-         <div class='_passWord'>pass4word</div>
-
-         <div class='_payee' style='text-align:left; '>
-           <a href="https://bestbuy.accountonline.com" title="Best Buy Visa Card" target="_blank">BEST BUY</a>
-         </div>
-         <div class='_dueDate'>13</div>
-         <div class='_userName'>user5name</div>
-         <div class='_passWord'>pass5word</div>
-
-         <div class='_payee' style='text-align:left; '>
-           <a href="https://www.broward.org/WaterServices/CustomerService/Pages/Utilform.aspx" title="Water Bill" target="_blank">Broward/Water-Sewer</a>
-         </div>
-         <div class='_dueDate'>15</div>
-         <div class='_userName'>user6name</div>
-         <div class='_passWord'>pass6word</div>
-
-         <div class='_payee' style='text-align:left; '>
-           <a href="https://my.xfinity.com/?cid=cust" title="Cable bill" target="_blank">Comcast/Xfinity</a>
-         </div>
-         <div class='_dueDate'>15</div>
-         <div class='_userName'>user7name</div>
-         <div class='_passWord'>pass7word</div>
-
-         <div class='_payee' style='text-align:left; '>
-           <a href="https://www.chase.com/personal/credit-cards/amazon" title="Amazon Credit" target="_blank">Amazon Prime by Chase</a>
-         </div>
-         <div class='_dueDate'>17</div>
-         <div class='_userName'>user8name</div>
-         <div class='_passWord'>pass8word</div>
-
+    <div class="root">
+      <header>
+        <div class="container">
+          <h1 id="welcome">Bills Schedule</h1>
         </div>
-      </div>
-      <!-- I really like the color combination of your page, removed your invalid comment also -->
+      </header>
+      <main>
+        <div class="content">
+          <div class="container">
+            <div class="table-head">
+              <div class="_payee">Account</div>
+              <div class="_dueDate">Due Date</div>
+              <div class="_userName">Username</div>
+              <div class="_passWord">Password</div>
+            </div>
+            <div class="table-row">
+              <div class="_payee">
+                <a href="https://heroku.com" title="Web Hosting" target="_blank"
+                  >HEROKU</a
+                >
+              </div>
+              <div class="_dueDate">1</div>
+              <div class="_userName">user1name</div>
+              <div class="_passWord">pass1word</div>
+            </div>
+
+            <div class="table-row">
+              <div class="_payee">
+                <a href="https://fpl.com" title="Electric Bill" target="_blank"
+                  >FPL</a
+                >
+              </div>
+              <div class="_dueDate">7</div>
+              <div class="_userName">user2name</div>
+              <div class="_passWord">pass2word</div>
+            </div>
+
+            <div class="table-row">
+              <div class="_payee" style="text-align: left">
+                <a href="https://www.paypal.com" title="PayPal" target="_blank"
+                  >PayPal</a
+                >
+              </div>
+              <div class="_dueDate">9</div>
+              <div class="_userName">user3name</div>
+              <div class="_passWord">pass3word</div>
+            </div>
+            <div class="table-row">
+              <div class="_payee" style="text-align: left">
+                <a
+                  href="https://sprint.com"
+                  title="Sprint Cellular"
+                  target="_blank"
+                  >SPRINT Cellular</a
+                >
+              </div>
+              <div class="_dueDate">11</div>
+              <div class="_userName">user4name</div>
+              <div class="_passWord">pass4word</div>
+            </div>
+            <div class="table-row">
+              <div class="_payee">
+                <a
+                  href="https://bestbuy.accountonline.com"
+                  title="Best Buy Visa Card"
+                  target="_blank"
+                  >BEST BUY</a
+                >
+              </div>
+              <div class="_dueDate">13</div>
+              <div class="_userName">user5name</div>
+              <div class="_passWord">pass5word</div>
+            </div>
+
+            <div class="table-row">
+              <div class="_payee" style="text-align: left">
+                <a
+                  href="https://www.broward.org/WaterServices/CustomerService/Pages/Utilform.aspx"
+                  title="Water Bill"
+                  target="_blank"
+                  >Broward/Water-Sewer</a
+                >
+              </div>
+              <div class="_dueDate">15</div>
+              <div class="_userName">user6name</div>
+              <div class="_passWord">pass6word</div>
+            </div>
+
+            <div class="table-row">
+              <div class="_payee" style="text-align: left">
+                <a
+                  href="https://my.xfinity.com/?cid=cust"
+                  title="Cable bill"
+                  target="_blank"
+                  >Comcast/Xfinity</a
+                >
+              </div>
+              <div class="_dueDate">15</div>
+              <div class="_userName">user7name</div>
+              <div class="_passWord">pass7word</div>
+            </div>
+
+            <div class="table-row">
+              <div class="_payee" style="text-align: left">
+                <a
+                  href="https://www.chase.com/personal/credit-cards/amazon"
+                  title="Amazon Credit"
+                  target="_blank"
+                  >Amazon Prime by Chase</a
+                >
+              </div>
+              <div class="_dueDate">17</div>
+              <div class="_userName">user8name</div>
+              <div class="_passWord">pass8word</div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   </body>
 </html>
